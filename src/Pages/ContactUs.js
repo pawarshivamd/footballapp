@@ -15,10 +15,10 @@ const Contact_Us = () => {
 
             <Box>
 
-              <Link to="https://info@thefootballagency.net/"><EmailIcon color='primary' className='icon' /></Link>
+              <Link to="mailto://info@thefootballagency.net"><EmailIcon color='primary' className='icon' /></Link>
             </Box>
 
-            <Link to="https://info@thefootballagency.net/" className='text-link'  >info@thefootballagency.net</Link>
+            <Link to="mailto://info@thefootballagency.net" className='text-link'  >info@thefootballagency.net</Link>
 
           </Box>
           <Box className="social-body">

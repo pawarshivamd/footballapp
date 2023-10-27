@@ -1,6 +1,4 @@
-@import url(./Fonts/font/stylesheet.css);
-@import url(./Fonts/ge_flow/GE_Flow/stylesheet.css);
-
+@import url(./Fonts/transfonter.org-20231027-125649/stylesheet.css);
 * {
   box-sizing: border-box;
   margin: 0;
@@ -191,7 +189,7 @@ body.no-scroll {
           color: var(--theme-color);
           padding: 10px;
           font-weight: 500;
-          font-size: 16px;
+          font-size: 15px;
           /* border: 1px solid var(--theme-color); */
           background-color: var(--silver);
 
@@ -207,39 +205,51 @@ body.no-scroll {
 /* hero section start */
 .hero-slider {
   z-index: -1 !important;
-
   .swiper-slide {
     min-height: 45vh;
     background-position: center;
     background-size: cover;
     width: 100%;
-
-    .hero-body {
+    &::before {
+      content: '';
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--theme-color, #172945);
+      mix-blend-mode: hue;
+     
+    }
+  }
 
-      .main-text {
-        text-align: center;
-        font-weight: 700;
-        margin-bottom: 10px;
-        font-size: 78px;
-        color: var(--white);
-        line-height: normal;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      }
 
-      .sub-text {
-        color: var(--yellow-dark);
-        text-align: center;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        font-size: 36.8px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        text-transform: capitalize;
-      }
+  .hero-body {
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    .main-text {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 0px;
+      font-size: 78px;
+      color: var(--white);
+      line-height: 40px;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  
+    .sub-text {
+      color: var(--yellow-dark);
+      text-align: center;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      font-size: 35px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: capitalize;
     }
   }
 }
@@ -345,8 +355,9 @@ body.no-scroll {
   .download-text {
     text-align: center;
     font-weight: 700;
-    font-size: 17px;
+    font-size: 22px;
     margin-top: 20px;
+    color: var(--theme-color);
   }
 
   .btn-box {
@@ -360,7 +371,7 @@ body.no-scroll {
       color: var(--theme-color);
       font-size: 17px;
       font-weight: 900;
-      padding: 10px 25px;
+      padding: 13px 33px;
       text-transform: uppercase;
     }
   }
@@ -465,7 +476,7 @@ body.no-scroll {
         font-size: 12px;
         padding: 15px 10px;
         margin-right: 20px;
-        font-weight: 700;
+        font-weight: 800;
         line-height: 18.2px;
 
         &:hover {
@@ -596,7 +607,7 @@ body.no-scroll {
             background-color: var(--yellow-dark);
             color: var(--white);
             line-height: 21.2px;
-
+            font-weight: 800;
             &:hover {
               background-color: var(--theme-color);
             }
@@ -619,7 +630,8 @@ body.no-scroll {
 /* teams-container-section End */
 
 @media(max-width:991px) {
-  .navbar {
+
+.navbar {
     padding: 0;
 
     .menubar-box {
@@ -661,14 +673,18 @@ body.no-scroll {
         }
       }
     }
-  }
+}
 
   .hero-slider {
     .swiper-slide {
       min-height: 45vh;
-
-      .hero-body {
-        width: 100%;
+    }
+    
+    .hero-body {
+      width: 100%;    
+      .sub-text {
+      
+        font-size: 34.8px;
       }
     }
   }
@@ -725,6 +741,10 @@ body.no-scroll {
 }
 
 @media(max-width:767px) {
+  
+  .manchester-united-text {
+    font-size: 11px;
+  }
   .navbar {
     padding: 0;
 
@@ -758,20 +778,19 @@ body.no-scroll {
   .hero-slider {
     .swiper-slide {
       min-height: 35vh;
-
-      .hero-body {
-        width: 100%;
-
-        .main-text {
-          margin-bottom: 10px;
-          font-size: 40px;
-        }
-
-        .sub-text {
-          font-size: 25px;
-        }
-      }
     }
+    
+          .hero-body {
+            width: 100%;
+    
+            .main-text {
+              font-size: 40px;
+            }
+    
+            .sub-text {
+              font-size: 18px;
+            }
+          }
   }
 
   .home-about-section {
@@ -794,6 +813,12 @@ body.no-scroll {
     .main-box {
       margin: 50px 0;
       width: min(100% - 0px, 95%);
+      .text-{
+        font-size: 17px;
+      }
+    }
+    .download-text{
+      font-size: 17px;
     }
   }
 
@@ -836,10 +861,9 @@ body.no-scroll {
 
         .request-btn {
           width: 70px;
-          font-size: 12px;
+          font-size: 9px;
           padding: 10px 10px;
           margin-right: 0;
-          font-size: 10px;
           line-height: 16.2px;
         }
       }
@@ -864,16 +888,16 @@ body.no-scroll {
       border-bottom: 1px solid #5B5B5B;
 
       .main-text {
-        font-size: 27px;
+        font-size: 17px;
         font-style: normal;
         font-weight: 300;
         color: var(--black);
       }
 
       .sub-text {
-        margin-left: 25px;
+        margin-left: 20px;
         color: #707070;
-        font-size: 22px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 300;
       }
@@ -913,11 +937,7 @@ body.no-scroll {
             width: 80%;
 
             .main-date-text {
-              background-color: var(--theme-color);
-              color: var(--white);
-              text-align: center;
               font-size: 14px;
-              font-weight: 600;
               padding: 5px 0;
             }
 
@@ -956,19 +976,12 @@ body.no-scroll {
             justify-content: flex-end;
 
             .btn {
-              font-size: 12px;
-              cursor: pointer;
-              border: none;
-              border-radius: none;
+              font-size: 10px;
               height: 65px;
               width: 60px;
               background-color: var(--yellow-dark);
               color: var(--white);
-              line-height: 21.2px;
-
-              &:hover {
-                background-color: var(--theme-color);
-              }
+              line-height: 15.2px;
             }
           }
 
@@ -1059,7 +1072,11 @@ body.no-scroll {
 
   /* teams-container-section End */
 }
-
+@media (max-width:1024px) and (min-width:1024px){
+  .navbar ul li{
+    padding: 10px 30px !important ;
+  }
+}
 @media (max-width:820px) and (min-width:820px) {
   .home-about-section .about-right-body .social-container {
     margin-left: 0px;

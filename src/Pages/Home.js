@@ -18,55 +18,30 @@ const Home = () => {
   return (
 
     <>
-      <Box >
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={30}
-          loop={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          modules={[Autoplay]}
-          className="hero-slider"
-        >
-
-          <SwiperSlide className='swiper-slide' style={{ backgroundImage: `url(${imgbg1})` }} >
-            <Box container className='hero-body'>
-              <Box>
-                <Typography className='main-text'  >ONE CLICK AWAY</Typography>
-                <Typography className='sub-text'>from making your dream come true</Typography>
-              </Box>
-            </Box>
-          </SwiperSlide>
-          <SwiperSlide className='swiper-slide' style={{ backgroundImage: `url(${imgbg2})` }} >
-            <Box container className='hero-body'>
-              <Box  >
-                <Typography className='main-text'>ONE CLICK AWAY</Typography>
-                <Typography className='sub-text'>from making your dream come true</Typography>
-              </Box>
-            </Box>
-          </SwiperSlide>
-          <SwiperSlide className='swiper-slide' style={{ backgroundImage: `url(${imgbg3})` }} >
-            <Box container className='hero-body'>
-              <Box  >
-                <Typography className='main-text'  >ONE CLICK AWAY</Typography>
-                <Typography className='sub-text'>from making your dream come true</Typography>
-
-              </Box>
-            </Box>
-          </SwiperSlide>
-          <SwiperSlide className='swiper-slide' style={{ backgroundImage: `url(${imgbg4})` }} >
-            <Box container className='hero-body'>
-              <Box  >
-                <Typography className='main-text'  >ONE CLICK AWAY</Typography>
-                <Typography className='sub-text'>from making your dream come true</Typography>
-
-              </Box>
-            </Box>
-          </SwiperSlide>
-        </Swiper>
+ <Box>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={0}
+        loop={true}
+        speed= {2000}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay]}
+        className="hero-slider"
+      >
+        <SwiperSlide className='swiper-slide' style={{ backgroundImage: `url(${imgbg1}  )` }}></SwiperSlide>
+        <SwiperSlide className='swiper-slide' style={{ backgroundImage: `url(${imgbg2})` }}></SwiperSlide>
+        <SwiperSlide className='swiper-slide' style={{ backgroundImage: `url(${imgbg3})` }}></SwiperSlide>
+      <Box className='hero-body'>
+        <Box>
+          <Typography className='main-text'>ONE CLICK AWAY</Typography>
+          <Typography className='sub-text'>from making your dream come true</Typography>
+        </Box>
       </Box>
+      </Swiper>
+ </Box>
       <Box className="home-about-section">
         <Container>
           <Grid container spacing={2}>
@@ -81,8 +56,8 @@ const Home = () => {
                 <Typography className='text-main' >Contact us :</Typography>
                 <Box className="social-container">
                   <Box className="social-body">
-                    <Link to="https://info@thefootballagency.net/"  ><EmailIcon color='primary' className='icon' /></Link>
-                    <Link to="https://info@thefootballagency.net/" className='text-link' >info@thefootballagency.net</Link>
+                    <Link to="mailto://info@thefootballagency.net"  ><EmailIcon color='primary' className='icon' /></Link>
+                    <Link to="mailto://info@thefootballagency.net" className='text-link' >info@thefootballagency.net</Link>
                   </Box>
                   <Box className="social-body">
                     <Link to="https://www.instagram.com/thefootballagencykw/"><InstagramIcon color='primary' className='icon' /></Link>
