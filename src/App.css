@@ -855,16 +855,16 @@ body.no-scroll {
           }
 
           .sub-text {
-            font-size: 17px;
+            font-size: 14px;
           }
         }
 
         .request-btn {
           width: 70px;
-          font-size: 9px;
+          font-size: 10px;
           padding: 10px 10px;
           margin-right: 0;
-          line-height: 16.2px;
+          line-height: 15.2px;
         }
       }
     }
@@ -896,7 +896,6 @@ body.no-scroll {
 
       .sub-text {
         margin-left: 20px;
-        color: #707070;
         font-size: 16px;
         font-style: normal;
         font-weight: 300;
@@ -934,16 +933,16 @@ body.no-scroll {
           justify-content: space-between;
 
           .teams-date-body {
-            width: 80%;
+            width: 75%;
 
             .main-date-text {
-              font-size: 14px;
+              font-size: 12px;
               padding: 5px 0;
             }
 
             .sub-text {
               padding: 5px 0;
-              font-size: 16px;
+              font-size: 12px;
               font-weight: 400;
               text-align: center;
             }
@@ -958,7 +957,7 @@ body.no-scroll {
 
               & p {
                 width: min(100% - 0px, 180px);
-                font-size: 16px;
+                font-size: 12px;
                 color: var(--black);
                 font-style: normal;
                 font-weight: 300;
@@ -968,7 +967,7 @@ body.no-scroll {
           }
 
           .btn-box {
-            width: 19%;
+            width: 22%;
             display: -webkit-box;
             display: -webkit-flex;
             display: -ms-flexbox;
@@ -977,8 +976,8 @@ body.no-scroll {
 
             .btn {
               font-size: 10px;
-              height: 65px;
-              width: 60px;
+              height: 56px;
+              width: 70px;
               background-color: var(--yellow-dark);
               color: var(--white);
               line-height: 15.2px;
@@ -1039,7 +1038,7 @@ body.no-scroll {
 
             .sub-text {
               padding: 5px 0;
-              font-size: 16px;
+              font-size: 12px;
             }
 
             .box-contain {
@@ -1047,8 +1046,7 @@ body.no-scroll {
 
               & p {
                 width: min(100% - 0px, 180px);
-                font-size: 12px;
-                font-weight: 300;
+                font-size: 11px;
               }
             }
           }

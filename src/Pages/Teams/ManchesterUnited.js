@@ -187,7 +187,7 @@ const ManchesterUnited = () => {
                                                         <Typography>{Team2}</Typography>
                                                     </Box>
                                                 </Box>
-                                                <Box className="btn-box"><Link to="https://www.figma.com/exit?url=https%3A%2F%2Fwa.me%2F%2B96594715154"><button className='btn'>{Request}</button></Link></Box>
+                                                <Box className="btn-box"><Link to="https://api.whatsapp.com/send/?phone=%2B96594715154&text&type=phone_number&app_absent=0"><button className='btn'>{Request}</button></Link></Box>
                                             </Box>
                                         </>
                                     )
