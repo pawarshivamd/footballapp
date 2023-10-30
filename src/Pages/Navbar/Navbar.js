@@ -1,126 +1,100 @@
-import React, { useEffect, useRef, useState } from "react";
-import logo from "../../Assets/Imgs/logo/logo.svg";
-import {
-  Box,
-  ClickAwayListener,
-  Container,
-} from "@mui/material";
-import { Link, NavLink } from "react-router-dom";
-import { ExpandMore } from "@mui/icons-material";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-
-const footballClubs = [
-  "Manchester United",
-  "Manchester City",
-  "FC Barcelona",
-  "Sevilla",
-  "AS Roma",
-  "BVB Dortmund",
-  "Paris St Germain",
-  "Liverpool FC",
-  "Tottenham Hotspur",
-  "Real Madrid",
-  "AC Milan",
-  "S.S. Lazio",
-  "Bayer Leverkusen",
-  "OL Lyonnais",
-  "Arsenal FC",
-  "West Ham United",
-  "Atletico De Madrid",
-  "Inter Milan",
-  "SSC Napoli",
-  "RB Leipzig",
-  "OL Marseille",
-  "Chelsea FC",
-  "Newcastle United",
-  "Valencia",
-  "Juventus",
-  "Bayern Munich",
-];
+import React, { useEffect, useRef, useState } from "react"
+import logo from "../../Assets/Imgs/logo/logo.svg"
+import { Box, ClickAwayListener, Container } from "@mui/material"
+import { Link, NavLink } from "react-router-dom"
+import { ExpandMore } from "@mui/icons-material"
+import ChevronRightIcon from "@mui/icons-material/ChevronRight"
+import MenuIcon from "@mui/icons-material/Menu"
+import CloseIcon from "@mui/icons-material/Close"
+import { fetchTeams } from "../../API"
 
 const Navbar = () => {
+  const [openteams, setOpenteams] = useState(false)
+  const [showMenubar, setShowMenubar] = useState(false)
+  const [isSticky, setIsSticky] = useState(false)
+  const [isNavigating, setIsNavigating] = useState(false)
+  const [teams, setTeams] = useState([])
+  const teamsMenuRef = useRef(null)
 
-  const [openteams, setOpenteams] = useState(false);
-  const [showMenubar, setShowMenubar] = useState(false);
-  const [isSticky, setIsSticky] = useState(false);
-  const [isNavigating, setIsNavigating] = useState(false);
-  const teamsMenuRef = useRef(null);
+  const handleScroll = () => {
+    if (window.pageYOffset > 100) {
+      setIsSticky(true)
+    } else {
+      setIsSticky(false)
+    }
+  }
 
   const handleClick = () => {
-    setOpenteams((prev) => !prev);
-  };
+    setOpenteams((prev) => !prev)
+  }
 
   const handleClickAway = () => {
-    setOpenteams(false);
-  };
+    setOpenteams(false)
+  }
 
   const handleMenuClick = () => {
-    setShowMenubar(!showMenubar);
+    setShowMenubar(!showMenubar)
     if (!showMenubar) {
-      document.body.classList.add("no-scroll");
+      document.body.classList.add("no-scroll")
     } else {
-      document.body.classList.remove("no-scroll");
+      document.body.classList.remove("no-scroll")
     }
-  };
+  }
   const handleMenuItemClick = () => {
-    setIsNavigating(true);
-    setShowMenubar(false);
-    setOpenteams(false);
-  };
+    setIsNavigating(true)
+    setShowMenubar(false)
+    setOpenteams(false)
+  }
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.pageYOffset > 100) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
+    window.addEventListener("scroll", handleScroll)
+    ;(async () => {
+      const { status, teams } = await fetchTeams()
+      if (status) setTeams(teams)
+    })()
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
-    };
-  }, []);
   useEffect(() => {
     if (isNavigating) {
-
       const delay = setTimeout(() => {
-        document.body.classList.remove("no-scroll");
-        setIsNavigating(false);
-      }, 100);
-      return () => clearTimeout(delay);
+        document.body.classList.remove("no-scroll")
+        setIsNavigating(false)
+      }, 100)
+      return () => clearTimeout(delay)
     }
-  }, [isNavigating]);
+  }, [isNavigating])
   return (
     <>
       <Box className={`${isSticky ? "sticky-head" : ""}`}>
-
-
         <header className="header">
-
           <Container maxWidth="xl">
-
             <nav className="navbar">
               <Box className="img-box">
                 <Link to="/" onClick={handleMenuItemClick}>
                   <img src={logo} alt="" />
                 </Link>
               </Box>
-              <Box component="ul" sx={{ display: "flex" }} className={`list-group ${showMenubar ? 'list-group-show' : ''}`}>
+              <Box
+                component="ul"
+                sx={{ display: "flex" }}
+                className={`list-group ${showMenubar ? "list-group-show" : ""}`}
+              >
                 <Box component="li">
-                  <NavLink to='/about-us' onClick={handleMenuItemClick}>About Us</NavLink>
+                  <NavLink to="/about-us" onClick={handleMenuItemClick}>
+                    About Us
+                  </NavLink>
                 </Box>
                 <Box component="li" ref={teamsMenuRef}>
                   <ClickAwayListener onClickAway={handleClickAway}>
-                    <span sx={{ position: 'relative' }}>
-                      <NavLink onClick={handleClick} style={{display:"flex", alignItems:"center"}}>
+                    <span sx={{ position: "relative" }}>
+                      <NavLink
+                        onClick={handleClick}
+                        style={{ display: "flex", alignItems: "center" }}
+                      >
                         Teams
-
                         {openteams ? (
                           <ExpandMore fontSize="medium" />
                         ) : (
@@ -128,11 +102,24 @@ const Navbar = () => {
                         )}
                       </NavLink>
                       {openteams ? (
-                        <Box className="list-group-body" >
-                          <Box className="list-container" sx={{ display: "flex", }} >
-                            {footballClubs.map((club, index) => (
-                              <NavLink key={index} style={{ display: "flex", justifyContent: "center", alignItems: "center" }} className="list-item" onClick={handleMenuItemClick} to={`/${club.toLowerCase().replace(/\s+/g, '-')}`}>
-                                {club}
+                        <Box className="list-group-body">
+                          <Box
+                            className="list-container"
+                            sx={{ display: "flex" }}
+                          >
+                            {teams.map((club, index) => (
+                              <NavLink
+                                key={index}
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                }}
+                                className="list-item"
+                                onClick={handleMenuItemClick}
+                                to={`/club/${club?.id}`}
+                              >
+                                {club?.name}
                               </NavLink>
                             ))}
                           </Box>
@@ -142,21 +129,26 @@ const Navbar = () => {
                   </ClickAwayListener>
                 </Box>
                 <Box component="li">
-                  <NavLink to="stadium-tours" onClick={handleMenuItemClick}>Stadium Tours</NavLink>
+                  <NavLink to="stadium-tours" onClick={handleMenuItemClick}>
+                    Stadium Tours
+                  </NavLink>
                 </Box>
                 <Box component="li">
-                  <NavLink to='/contact-us' onClick={handleMenuItemClick}>Contact Us</NavLink>
+                  <NavLink to="/contact-us" onClick={handleMenuItemClick}>
+                    Contact Us
+                  </NavLink>
                 </Box>
-
               </Box>
-              <Box className="menubar-box" onClick={handleMenuClick}>{showMenubar ? <CloseIcon /> : <MenuIcon />}</Box>
+              <Box className="menubar-box" onClick={handleMenuClick}>
+                {showMenubar ? <CloseIcon /> : <MenuIcon />}
+              </Box>
             </nav>
           </Container>
         </header>
         <Box className="line-y"></Box>
       </Box>
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
