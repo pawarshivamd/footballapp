@@ -861,7 +861,7 @@ body.no-scroll {
 
         .request-btn {
           width: 70px;
-          font-size: 10px;
+          font-size: 12px;
           padding: 10px 10px;
           margin-right: 0;
           line-height: 15.2px;
@@ -975,7 +975,7 @@ body.no-scroll {
             justify-content: flex-end;
 
             .btn {
-              font-size: 10px;
+              font-size: 12px;
               height: 56px;
               width: 70px;
               background-color: var(--yellow-dark);
