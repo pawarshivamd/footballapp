@@ -58,18 +58,24 @@ const ClubDetails = () => {
                 textAlign: "center",
               }}
             >
-              <div style={{ height: "45vh", width: "100%", margin: "auto" }}>
+              <div style={{ height: "38vh", width: "100%", margin: "auto" }}>
                 <img
                   src={imgbg1}
                   alt="not-found"
-                  style={{ height: "100%", width: "100" }}
+                  style={{ height: "100%" }}
                 ></img>
               </div>
-              <Typography sx={{ fontSize: 44, fontWeight: 700 }}>
+              <Typography
+                sx={{ fontSize: 28, fontWeight: 700, color: "#172945" }}
+              >
                 No Matches Found
               </Typography>
               <Typography
-                sx={{ fontSize: 24, fontWeight: 300, color: "#172945" }}
+                sx={{
+                  fontSize: 18,
+                  fontWeight: "300 !important",
+                  color: "#172945",
+                }}
               >
                 {`We apologize, but it seems that no matches have been scheduled
                 for the ${teamDetails?.name} at this time. Please stay tuned for updates
