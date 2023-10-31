@@ -114,6 +114,7 @@ const Navbar = () => {
                                   display: "flex",
                                   justifyContent: "center",
                                   alignItems: "center",
+                                  textTransform: "capitalize",
                                 }}
                                 className="list-item"
                                 onClick={handleMenuItemClick}
