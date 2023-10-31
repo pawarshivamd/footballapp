@@ -161,7 +161,7 @@ body.no-scroll {
 
     .list-group-body {
       position: absolute;
-      width: min(100% - 10px, 1132px);
+      max-width: min(100% - 10px, 1132px);
       left: 80px;
       top: 200px;
       background-color: var(--white);
@@ -663,7 +663,7 @@ body.no-scroll {
         position: absolute;
         width: min(100% - 10px, 100%);
         /* left: 80px; */
-        top: 90px;
+        top: 80px;
         left: 4px;
         right: 0;
         background-color: var(--white);
@@ -761,7 +761,7 @@ body.no-scroll {
       position: absolute;
       width: min(100% - 10px, 100%);
       /* left: 80px; */
-      top: 90px;
+      top: 80px;
       left: 4px;
       right: 0;
       background-color: var(--white);
@@ -769,7 +769,7 @@ body.no-scroll {
       .list-container {
         justify-content: space-around;
         overflow-y: scroll;
-        height: 54vh;
+        max-height: 54vh;
       }
     }
   }
