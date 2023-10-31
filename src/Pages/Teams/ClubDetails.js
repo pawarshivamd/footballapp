@@ -1,36 +1,50 @@
 import { Box, Container, Typography } from "@mui/material"
 import React, { useEffect, useState } from "react"
-import ArsenalFC from "../../Assets/Imgs/teamslogo/ArsenalFC.png"
 import HeadLine from "../../Components/HeadLine"
 import { Link, useParams } from "react-router-dom"
 import { fetchTeamSchedule } from "../../API"
+import Loader from "../../Components/Loader/Loader"
 
 const ClubDetails = () => {
   const { id } = useParams()
 
+  const [loading, setLoading] = useState(false)
+  const [teamDetails, setTeamDetails] = useState({})
   const [clubSchedule, setClubSchedule] = useState({})
 
   useEffect(() => {
+    setLoading(true)
     ;(async () => {
-      const { schedule, status } = await fetchTeamSchedule(id)
-      if (status) setClubSchedule(schedule[0])
+      const { schedule, status, team_data } = await fetchTeamSchedule(id)
+      setTeamDetails(team_data[0])
+      if (status) {
+        setClubSchedule(schedule[0])
+      } else {
+        setClubSchedule([])
+      }
+      setLoading(false)
     })()
-    return setClubSchedule({})
   }, [id])
 
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <>
       <HeadLine
-        bgcolorbigline="#DA020E"
-        bgcolortext="#FFE500"
-        TeamsName="Manchester United"
+        bgcolorbigline={`#${teamDetails?.primary_color}`}
+        bgcolortext={`#${teamDetails?.secondary_color}`}
+        TeamsName={teamDetails?.name}
       />
       <section className="teams-container-section">
         <Container maxWidth="md">
           <Box className="teams-head-body">
-            <Typography className="main-text">Manchester United</Typography>
+            <Typography className="main-text">{teamDetails?.name}</Typography>
             <Typography className="sub-text">Fixtures</Typography>
-            <img src={ArsenalFC} alt="ArsenalFC" className="teams-logo" />
+            <img
+              src={`https://football.jennypoint.com/api/resources/images/${teamDetails?.team_logo}`}
+              alt="ArsenalFC"
+              className="teams-logo"
+            />
           </Box>
           <Box>
             <Box className="ticket-container-body">
@@ -38,9 +52,8 @@ const ClubDetails = () => {
                 {Object.keys(clubSchedule) &&
                   Object.keys(clubSchedule).map((cureEle, i) => {
                     const Fixtures = clubSchedule[cureEle]
-
                     return (
-                      <>
+                      <div key={cureEle}>
                         <Box
                           sx={{
                             textAlign: "center",
@@ -68,7 +81,7 @@ const ClubDetails = () => {
                               whatsapp,
                             } = Fixture
                             return (
-                              <Box className="contain-body" key={key}>
+                              <Box className="contain-body" key={date}>
                                 <Box className="teams-date-body">
                                   <Typography className="main-date-text">
                                     {date}
@@ -94,7 +107,7 @@ const ClubDetails = () => {
                               </Box>
                             )
                           })}
-                      </>
+                      </div>
                     )
                   })}
               </Box>

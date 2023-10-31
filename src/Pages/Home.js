@@ -12,19 +12,27 @@ import { Link } from "react-router-dom"
 import EmailIcon from "@mui/icons-material/Email"
 import InstagramIcon from "@mui/icons-material/Instagram"
 import WhatsAppIcon from "@mui/icons-material/WhatsApp"
+import Loader from "../Components/Loader/Loader"
 import { fetchContact } from "../API"
 
 const Home = () => {
   const [contactDetails, setContactDetails] = useState({})
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     ;(async () => {
       const { data, status } = await fetchContact()
-      if (status) setContactDetails(data)
+      if (status) {
+        setContactDetails(data)
+      }
+      setLoading(false)
     })()
   }, [])
 
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <>
       <Box>
         <Swiper

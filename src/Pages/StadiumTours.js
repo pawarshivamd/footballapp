@@ -1,19 +1,27 @@
 import { Box, Container, Typography } from "@mui/material"
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import Loader from "../Components/Loader/Loader"
 import { fetchStadium } from "../API"
 
 const StadiumTours = () => {
   const [stadiums, setStadiums] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     ;(async () => {
       const { status, teams } = await fetchStadium()
-      if (status) setStadiums(teams)
+      if (status) {
+        setStadiums(teams)
+      }
+      setLoading(false)
     })()
   }, [])
 
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <>
       <Box className=" gray-line-box"></Box>
       <section className="stadium-tours-section">
