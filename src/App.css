@@ -409,6 +409,10 @@ body.no-scroll {
         color: var(--yellow-dark);
       }
     }
+    .address-link{
+      display: block;
+      width: min(100% - 0px , 25%);
+    }
   }
 }
 
@@ -567,7 +571,7 @@ body.no-scroll {
             background-color: var(--light-gray);
             color: var(--black);
             font-size: 16px;
-            font-weight: 400;
+            font-weight: 200;
             text-align: center;
           }
 
@@ -889,20 +893,15 @@ body.no-scroll {
 
       .main-text {
         font-size: 17px;
-        font-style: normal;
-        font-weight: 300;
-        color: var(--black);
       }
 
       .sub-text {
         margin-left: 20px;
         font-size: 16px;
-        font-style: normal;
-        font-weight: 300;
       }
 
       .teams-logo {
-        margin-left: 20px;
+        margin-left: auto;
         width: 70px;
       }
     }
@@ -943,8 +942,6 @@ body.no-scroll {
             .sub-text {
               padding: 5px 0;
               font-size: 12px;
-              font-weight: 400;
-              text-align: center;
             }
 
             .box-contain {
@@ -959,9 +956,6 @@ body.no-scroll {
                 width: min(100% - 0px, 180px);
                 font-size: 12px;
                 color: var(--black);
-                font-style: normal;
-                font-weight: 300;
-                text-align: center;
               }
             }
           }
@@ -978,8 +972,6 @@ body.no-scroll {
               font-size: 12px;
               height: 56px;
               width: 70px;
-              background-color: var(--yellow-dark);
-              color: var(--white);
               line-height: 15.2px;
             }
           }
@@ -994,6 +986,14 @@ body.no-scroll {
   }
 
   /* teams-container-section End */
+  .contact-section {
+    .social-body {
+      .address-link{
+        display: block;
+        width: min(100% - 0px , 60%);
+      }
+    }
+  }
 }
 
 @media (max-width:320px) {
@@ -1032,7 +1032,6 @@ body.no-scroll {
 
             .main-date-text {
               font-size: 12px;
-              font-weight: 600;
               padding: 5px 0;
             }
 
@@ -1069,6 +1068,14 @@ body.no-scroll {
   }
 
   /* teams-container-section End */
+  .contact-section {
+    .social-body {
+      .address-link{
+        display: block;
+        width: min(100% - 0px , 100%);
+      }
+    }
+  }
 }
 @media (max-width:1024px) and (min-width:1024px){
   .navbar ul li{

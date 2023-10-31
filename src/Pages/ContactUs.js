@@ -82,8 +82,8 @@ const Contact_Us = () => {
             <div style={{ display: "flex", justifyContent: "center" }}>
               <Link
                 to={contactDetails?.map_link}
-                className="text-link"
-                style={{ display: "block", width: "25%" }}
+                className="text-link  address-link"
+                
               >
                 {contactDetails?.address}
               </Link>
