@@ -53,8 +53,12 @@ body.no-scroll {
   justify-content: space-between;
   width: 100%;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background-color: var(--white);
 }
-
+.sticky-tems-line{
+  position: sticky;
+  top:145px;
+}
 .manchester-united-line {
   width: 80%;
 
@@ -69,7 +73,6 @@ body.no-scroll {
   align-items: center;
   justify-content: center;
   width: 19.5%;
-
   color: var(--theme-color);
   font-size: 17px;
   font-weight: 500;
@@ -206,9 +209,11 @@ body.no-scroll {
 .hero-slider {
   z-index: -1 !important;
   .swiper-slide {
+    background-color: lightgray 50%;
     min-height: 45vh;
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
     &::before {
       content: '';
@@ -781,14 +786,14 @@ body.no-scroll {
   /* hero section start */
   .hero-slider {
     .swiper-slide {
-      min-height: 35vh;
+      min-height: 27vh;
     }
     
           .hero-body {
             width: 100%;
     
             .main-text {
-              font-size: 40px;
+              font-size: 39px;
             }
     
             .sub-text {
@@ -799,9 +804,12 @@ body.no-scroll {
 
   .home-about-section {
     margin: 20px 0;
-
+    .text-main{
+      font-size: 17px !important;
+    }
     .sub-text {
       width: min(100% - 0px, 100%);
+      font-size: 16.162px;
     }
 
     .about-right-body {
@@ -818,11 +826,16 @@ body.no-scroll {
       margin: 50px 0;
       width: min(100% - 0px, 95%);
       .text-{
-        font-size: 17px;
+        font-size: 16px;
       }
     }
     .download-text{
       font-size: 17px;
+    }
+    .btn-box{
+        .btn{
+          font-size: 14px;
+        }
     }
   }
 

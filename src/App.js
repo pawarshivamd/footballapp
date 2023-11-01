@@ -18,14 +18,13 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Navbar />
+        <Navbar  />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/" element={<Home  />} />
+          <Route path="/about-us" element={<AboutUs  />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/Stadium-tours" element={<StadiumTours />} />
-          <Route path="/club/:id" element={<ClubDetails />} />
-          {/*Line given  below line redirects any other path to home */}
+          <Route path="/club/:id" element={<ClubDetails   />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>

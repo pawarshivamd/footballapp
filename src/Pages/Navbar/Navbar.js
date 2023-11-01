@@ -8,7 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu"
 import CloseIcon from "@mui/icons-material/Close"
 import { fetchTeams } from "../../API"
 
-const Navbar = () => {
+const Navbar = ( props ) => {
   const [openteams, setOpenteams] = useState(false)
   const [showMenubar, setShowMenubar] = useState(false)
   const [isSticky, setIsSticky] = useState(false)

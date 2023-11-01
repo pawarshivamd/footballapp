@@ -8,6 +8,9 @@ import { Box, Container, Grid, Typography } from "@mui/material"
 import imgbg1 from "../Assets/Imgs/herobg/bg1.png"
 import imgbg2 from "../Assets/Imgs/herobg/bg2.png"
 import imgbg3 from "../Assets/Imgs/herobg/bg3.png"
+import rebg1 from "../Assets/Imgs/herobg/rebg1.png"
+import rebg2 from "../Assets/Imgs/herobg/rebg2.png"
+import rebg3 from "../Assets/Imgs/herobg/rebg3.png"
 import { Link } from "react-router-dom"
 import EmailIcon from "@mui/icons-material/Email"
 import InstagramIcon from "@mui/icons-material/Instagram"
@@ -18,6 +21,17 @@ import { fetchContact } from "../API"
 const Home = () => {
   const [contactDetails, setContactDetails] = useState({})
   const [loading, setLoading] = useState(false)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     setLoading(true)
@@ -49,15 +63,15 @@ const Home = () => {
         >
           <SwiperSlide
             className="swiper-slide"
-            style={{ backgroundImage: `url(${imgbg1}  )` }}
+            style={{ backgroundImage: `url(${isMobile ? rebg1 : imgbg1})` }}
           ></SwiperSlide>
           <SwiperSlide
             className="swiper-slide"
-            style={{ backgroundImage: `url(${imgbg2})` }}
+            style={{ backgroundImage: `url(${isMobile ? rebg2 : imgbg2})` }}
           ></SwiperSlide>
           <SwiperSlide
             className="swiper-slide"
-            style={{ backgroundImage: `url(${imgbg3})` }}
+            style={{ backgroundImage: `url(${isMobile ? rebg3 : imgbg3})` }}
           ></SwiperSlide>
           <Box className="hero-body">
             <Box>
