@@ -7,6 +7,10 @@ import AboutUs from "./Pages/AboutUs"
 import ContactUs from "./Pages/ContactUs"
 import StadiumTours from "./Pages/StadiumTours"
 import ClubDetails from "./Pages/Teams/ClubDetails"
+import Categories from "./Pages/Categories"
+import Cart from "./Pages/Cart"
+import Order from "./Pages/Order"
+import ThankYou from "./Pages/ThankYou"
 
 export const theme = createTheme({
   typography: {
@@ -25,6 +29,10 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/Stadium-tours" element={<StadiumTours />} />
           <Route path="/club/:id" element={<ClubDetails   />} />
+          <Route path="/categories" element={<Categories/>} />
+          <Route path="/cart" element={<Cart/>}/>
+          <Route path="/order" element={<Order/>}/> 
+          <Route path="/thankyou" element={<ThankYou/>}/>
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
