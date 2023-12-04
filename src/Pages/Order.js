@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
 import { Box, Container, Grid, TextField, Typography } from '@mui/material'
 import React from 'react'
-import { cartapi } from './Cart'
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2'
+import { Link } from 'react-router-dom'
 export const CustomTextField = styled(TextField)`
 margin:5px 0px;
   .MuiInputBase-root{
@@ -14,6 +14,7 @@ input{
   padding:7.5px 14px;
   background-color:#EAEAEA ;
   border-radius: 0;
+  z-index:-1;
 
 }
 input[placeholder], [placeholder], *[placeholder] {
@@ -47,31 +48,57 @@ const Order = () => {
                   <Box className="order-line"></Box>
                 </Box>
                 <Box className="oder-conform-body">
-
-
-                  {cartapi.map((curEel, index) => {
-                    const { mainText, btnText, amountText } = curEel;
-                    return (
-                      <Box className="carat-body">
-                        <Box className="cart-contain">
-                          <Grid container >
-                            <Grid item lg={6} sm={6} xs={7} sx={{ display: "flex", alignItems: "center" }}>
-                              <Typography className="main-text">{mainText}</Typography>
-                            </Grid>
-                            <Grid item lg={3} sm={3} xs={2}>
-                              <Box className="button-body" sx={{ justifyContent: "center" }}>
-                                <Typography className="btn-text" >{btnText}</Typography>
-                              </Box>
-                            </Grid>
-                            <Grid item lg={3} sm={3} xs={2} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                              <Typography className="amount-text">{amountText}$</Typography>
-                            </Grid>
-                          </Grid>
-                        </Box>
-                      </Box>
-                    )
-                  })}
-
+                  <Box className="carat-body">
+                    <Box className="cart-contain">
+                      <Grid container >
+                        <Grid item lg={6} sm={6} xs={7} sx={{ display: "flex", alignItems: "center" }}>
+                          <Typography className="main-text">LALIGA FC BARCELONA - FC </Typography>
+                        </Grid>
+                        <Grid item lg={3} sm={3} xs={2}>
+                          <Box className="button-body" sx={{ justifyContent: "center" }}>
+                            <Typography className="btn-text" >x2</Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item lg={3} sm={3} xs={2} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                          <Typography className="amount-text">000$</Typography>
+                        </Grid>
+                      </Grid>
+                    </Box>
+                  </Box>
+                  <Box className="carat-body">
+                    <Box className="cart-contain">
+                      <Grid container >
+                        <Grid item lg={6} sm={6} xs={7} sx={{ display: "flex", alignItems: "center" }}>
+                          <Typography className="main-text">LALIGA FC BARCELONA - FC </Typography>
+                        </Grid>
+                        <Grid item lg={3} sm={3} xs={2}>
+                          <Box className="button-body" sx={{ justifyContent: "center" }}>
+                            <Typography className="btn-text" >x2</Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item lg={3} sm={3} xs={2} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                          <Typography className="amount-text">000$</Typography>
+                        </Grid>
+                      </Grid>
+                    </Box>
+                  </Box>
+                  <Box className="carat-body">
+                    <Box className="cart-contain">
+                      <Grid container >
+                        <Grid item lg={6} sm={6} xs={7} sx={{ display: "flex", alignItems: "center" }}>
+                          <Typography className="main-text">LALIGA FC BARCELONA - FC </Typography>
+                        </Grid>
+                        <Grid item lg={3} sm={3} xs={2}>
+                          <Box className="button-body" sx={{ justifyContent: "center" }}>
+                            <Typography className="btn-text" >x2</Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item lg={3} sm={3} xs={2} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                          <Typography className="amount-text">000$</Typography>
+                        </Grid>
+                      </Grid>
+                    </Box>
+                  </Box>
                   <Grid container>
                     <Grid item lg={12} md={12} sm={12} xs={12}>
                       <Grid container sx={{ display: "flex" }} className="total-box">
@@ -79,18 +106,17 @@ const Order = () => {
                         <Grid item lg={3} sm={3} xs={0}></Grid>
                         <Grid item lg={2} sm={2} xs={2}><Typography className="text-amount">000$</Typography></Grid>
                       </Grid>
-
                     </Grid>
                   </Grid>
                 </Box>
                 <Box >
                   <Grid container>
-                    <Grid item lg={6}  className="payament-box">
+                    <Grid item lg={6} md={6} sm={6} className="payament-box">
                       <Typography className="head-text">Add Payment Method</Typography>
                       <Box className="add-payment-line"></Box>
-                      <Typography sx={{ mt: 2 }}><span className="purchase-box">or purchase via whatsapp</span></Typography>
+                      <Typography sx={{ mt: 2 }}><Link className="purchase-box">or purchase via whatsapp</Link></Typography>
                     </Grid>
-                    <Grid item lg={6} className="note-box">
+                    <Grid item lg={6} md={6} sm={6} className="note-box">
                       <Box sx={{ display: "flex" }}>
                         <Box>Note:</Box>
                         <Box className="sub-text-notes">

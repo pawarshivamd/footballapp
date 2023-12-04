@@ -762,6 +762,8 @@ body.no-scroll {
   .our-text{
     text-transform: capitalize;
     font-weight: 600;
+    text-decoration: none;
+    color: var(--theme-color);
   }
 }
 /* categorie-section End */
@@ -889,6 +891,9 @@ body.no-scroll {
     padding: 2px 10px;
     text-transform: capitalize;
     font-size: 13px;
+    text-decoration: none;
+    color: var(--theme-color);
+    font-weight: 600;
   }
   .sub-text-notes{
     font-size: 15px;
@@ -1054,7 +1059,9 @@ body.no-scroll {
       }
     }
   }
-
+  .categorie-section  .card-body .select-box-body{
+    width: min(100% - 0px , 70%);
+  }
   /* stadium-tours-section End */
 }
 
@@ -1407,6 +1414,8 @@ body.no-scroll {
   .order-section .payament-box{
     margin-top: 40px !important;
   }
+
+
 }
 
 @media (max-width:320px) {

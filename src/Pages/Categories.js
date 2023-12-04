@@ -1,5 +1,6 @@
 import { Box, Button, Container, Grid, Typography } from '@mui/material'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Categories = () => {
   return (
@@ -150,7 +151,7 @@ const Categories = () => {
 
             <button className='add-cart-btn'>Add to cart</button>
             <Box>
-              <Typography className="our-text">or purchase via whatsapp</Typography>
+              <Typography ><Link className="our-text" > or purchase via whatsapp</Link></Typography>
               <Box className="purchase-line"></Box>
             </Box>
           </Box>
