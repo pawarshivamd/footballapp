@@ -694,7 +694,7 @@ body.no-scroll {
       .select-box-body {
         background-color: var(--light-gray);
         padding: 7px;
-        width: min(100% - 0px, 50%);
+        width: min(100% - 0px, 40%);
         min-height: 30px;
         margin-inline: auto;
         display: flex;
@@ -704,14 +704,20 @@ body.no-scroll {
         .select-box {
           width: min(100% - 0px, 50%);
           margin-inline: auto;
-          padding: 7px;
+          padding: 9px;
           background-color: var(--yellow-dark);
+        }
+        .non-select-box{
+          width: min(100% - 0px, 40%);
+          margin-inline: auto;
+          padding: 9px;
+          background-color: #878686;
         }
       }
   
       .number-ticket {
         background-color: var(--light-gray);
-        width: min(100% - 0px, 50px);
+        width: min(100% - 0px, 53px);
         text-align: center;
         padding: 4px;
         min-height: 30px;
@@ -724,7 +730,7 @@ body.no-scroll {
       }
   
       .btn {
-        width: min(100% - 0px , 80px);
+        width: min(100% - 0px , 35px);
         background-color: var(--light-gray);
         margin-left: 5px;
         color: var(--theme-color);
@@ -734,7 +740,7 @@ body.no-scroll {
         justify-content: center;
         align-items: center;
         padding: 0;
-  
+        cursor: pointer;
         &:hover {
           background-color: var(--theme-color);
           color: var(--white);
@@ -745,13 +751,17 @@ body.no-scroll {
     margin-top: 30px;
     margin-bottom: 10px;
     background-color: var(--yellow-dark);
-    padding: 10px 60px;
+    padding: 10px 48px;
     color: var(--white);
     font-size: 17.338px;
     font-style: normal;
     font-weight: 700;
     border: none;
-
+    cursor: pointer;
+  }
+  .our-text{
+    text-transform: capitalize;
+    font-weight: 600;
   }
 }
 /* categorie-section End */
@@ -809,6 +819,7 @@ body.no-scroll {
     font-size: 14px;
     font-weight: 600 !important;
     text-transform: capitalize;
+    margin-bottom: 7px;
   }
 }
 .cart-section{
@@ -845,7 +856,7 @@ body.no-scroll {
 .order-section{
   margin: 50px 0;
   .head-text{
-    font-size: 17px;
+    font-size: 19px;
     font-weight: 600;
     color: var(--theme-color);
   }
@@ -870,18 +881,26 @@ body.no-scroll {
 
   .add-payment-line{
     height: 3px;
-    width: min(100% - 0px, 160px);
+    width: min(100% - 0px, 176px);
     background-color: var(--yellow-dark);
   }
   .purchase-box{
     border: 3px solid var(--yellow-dark);
     padding: 2px 10px;
+    text-transform: capitalize;
+    font-size: 13px;
   }
   .sub-text-notes{
     font-size: 15px;
     color: #616161;
     font-weight: 300;
     margin-left: 5px;
+  }
+  .note-box{
+    margin-top: 70px;
+  }
+  .payament-box{
+    margin-top: 70px;
   }
 }
 .thankyou-body {
@@ -1297,9 +1316,7 @@ body.no-scroll {
       }
     }
   }
-  .categorie-section .btn{
-    min-width: 30px;
-  }
+
   .thankyou-body {
     margin-inline: auto;
     text-align: center;
@@ -1340,7 +1357,7 @@ body.no-scroll {
     text-wrap: wrap;
   }
   .carat-body .cart-contain .button-body .btn-text {
-    margin-inline: 2px;
+    margin-inline: 5px;
   }
   .carat-body .cart-contain .button-body .btn {
     min-width: 25px;
@@ -1363,7 +1380,7 @@ body.no-scroll {
     font-size: 15px;
 }
   .categorie-section .head-line{
-    font-size: 14px;
+    font-size: 13px;
   }
   .categorie-section .card-body .main-text{
     font-size: 13px;
@@ -1371,11 +1388,24 @@ body.no-scroll {
   .categorie-section .card-body .amount-body .amount-text {
     font-size: 13px;
   }
-  .categorie-section .card-body .select-box-body{
-    min-height: 20px;
+  .categorie-section .our-text {
+    font-size: 12px;
+  }
+  .categorie-section .purchase-line{
+  width: min(100% - 0px , 138px);
   }
   .categorie-section .card-body .select-box-body .select-box{
-    padding: 4px;
+    padding: 7px;
+  }
+  .categorie-section .card-body .select-box-body .non-select-box{
+    padding: 7px;
+  }
+
+  .order-section .note-box{
+    margin-top: 40px !important;
+  }
+  .order-section .payament-box{
+    margin-top: 40px !important;
   }
 }
 
@@ -1458,6 +1488,13 @@ body.no-scroll {
         width: min(100% - 0px , 100%);
       }
     }
+  }
+  .carat-body{
+    flex-wrap: wrap;
+  }
+  .carat-body .btn-box{
+      margin-left: auto;
+      margin-top: 5px;
   }
 }
 @media (max-width:1024px) and (min-width:1024px){

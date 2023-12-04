@@ -58,8 +58,8 @@ const Order = () => {
                             <Grid item lg={6} sm={6} xs={7} sx={{ display: "flex", alignItems: "center" }}>
                               <Typography className="main-text">{mainText}</Typography>
                             </Grid>
-                            <Grid item lg={3}  sm={3} xs={2}>
-                              <Box className="button-body" sx={{justifyContent:"center"}}>
+                            <Grid item lg={3} sm={3} xs={2}>
+                              <Box className="button-body" sx={{ justifyContent: "center" }}>
                                 <Typography className="btn-text" >{btnText}</Typography>
                               </Box>
                             </Grid>
@@ -73,33 +73,33 @@ const Order = () => {
                   })}
 
                   <Grid container>
-                            <Grid item lg={12} md={12} sm={12} xs={12}>
-                            <Grid container sx={{display:"flex"}} className="total-box">
-                                <Grid item lg={6} sm={6} xs={9}><Typography className="total-text">TOTAL PURCHASE:</Typography></Grid>
-                                <Grid item lg={3}  sm={3} xs={0}></Grid>
-                                <Grid item lg={2} sm={2} xs={2}><Typography className="text-amount">000$</Typography></Grid>
-                            </Grid>
+                    <Grid item lg={12} md={12} sm={12} xs={12}>
+                      <Grid container sx={{ display: "flex" }} className="total-box">
+                        <Grid item lg={6} sm={6} xs={9}><Typography className="total-text">TOTAL PURCHASE:</Typography></Grid>
+                        <Grid item lg={3} sm={3} xs={0}></Grid>
+                        <Grid item lg={2} sm={2} xs={2}><Typography className="text-amount">000$</Typography></Grid>
+                      </Grid>
 
-                            </Grid>
-                        </Grid>
+                    </Grid>
+                  </Grid>
                 </Box>
-                  <Box >
-                    <Grid container>
-                    <Grid item lg={6} sx={{mt:3}}>
+                <Box >
+                  <Grid container>
+                    <Grid item lg={6}  className="payament-box">
                       <Typography className="head-text">Add Payment Method</Typography>
                       <Box className="add-payment-line"></Box>
-                      <Typography  sx={{mt:2}}><span className="purchase-box">or purchase via whatsapp</span></Typography>
+                      <Typography sx={{ mt: 2 }}><span className="purchase-box">or purchase via whatsapp</span></Typography>
                     </Grid>
-                    <Grid item lg={6} sx={{mt:3}}>
-                        <Box sx={{display:"flex"}}>
+                    <Grid item lg={6} className="note-box">
+                      <Box sx={{ display: "flex" }}>
                         <Box>Note:</Box>
-                            <Box className="sub-text-notes">
-                             You will receive an email that your payment has been successful
-                            </Box>
-                        </Box> 
+                        <Box className="sub-text-notes">
+                          You will receive an email that your payment has been successful
+                        </Box>
+                      </Box>
                     </Grid>
-                    </Grid>
-                  </Box>
+                  </Grid>
+                </Box>
               </Box>
             </Grid2>
           </Grid2>

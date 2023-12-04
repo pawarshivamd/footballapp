@@ -40,10 +40,10 @@ const Cart = () => {
                                     <Box className="carat-body" >
                                     <Box className="cart-contain">
                                         <Grid container sx={{alignItems:"center"}}>
-                                            <Grid item lg={6} sm={7} xs={6} sx={{display:"flex",alignItems:"center"}}>
+                                            <Grid item lg={6} sm={7} xs={5} sx={{display:"flex",alignItems:"center"}}>
                                                 <Typography className="main-text">{mainText}</Typography>
                                             </Grid>
-                                            <Grid item lg={3} sm={3} xs={3}>
+                                            <Grid item lg={3} sm={3} xs={4}>
                                                 <Box className="button-body">
                                                     <Box className='btn'>-</Box>
                                                     <Typography  className="btn-text">{btnText}</Typography>
@@ -55,7 +55,7 @@ const Cart = () => {
                                             </Grid>
                                         </Grid>
                                     </Box>
-                                    <Box sx={{ml:2}}>
+                                    <Box sx={{ml:2}} className="btn-box">
                                         <button className='remove-btn'>remove</button>
                                     </Box>
                                 </Box>
